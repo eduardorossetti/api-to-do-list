@@ -1,0 +1,80 @@
+* TASKS
+
+        1. As a user, I want to be able to add a task
+        2. As a user, I want to be able to edit a task
+        3. As a user, I want to be able to delete a task
+        4. As a user, I want to see all tasks
+        5. As a user, I want to see the data of a task
+
+        <-------------------------------------------------------->
+
+        1. ROUTE - /task - add a task
+
+        {
+            id
+            description
+            date
+            status - (completed or in progress)
+        }
+
+        <-------------------------------------------------------->
+
+        2. ROUTE - /task/:id - edit a task
+
+        {
+            id
+            description
+            date
+            status - (completed or in progress)
+        }
+
+        <-------------------------------------------------------->
+
+        3. ROUTE - /task/:id - delete a task
+
+        <-------------------------------------------------------->
+
+        4. ROUTE - /task - search all tasks
+
+        <-------------------------------------------------------->
+
+        5. ROUTE - /task/:id - search just one task
+
+        <-------------------------------------------------------->
+
+* AUTHENTICATION vs AUTHORIZATION
+
+        AUTHENTICATION: the authentication is used to verify identity of a user
+            - email
+            - password
+            - token
+
+        AUTHORIZATION: the authorization is used to determine what actions
+                       a user can perform after being authenticated
+
+        EDUARDO ->  - Start a session (email and password)
+                    - Add new user (name, email, password, acess [limited or adm], photo, age)
+                    - Token (encrypted character string - JWT [Json Web Token])
+                    - When the token arrives along with the data on the new user route, the route
+                    will take the data from the user requesting that action and identify if the
+                    token is valid, see if the user has permission
+
+        <-------------------------------------------------------->
+
+* HOW COMPANIES WORK WITH AUTHENTICATION
+
+        - AWS Cognito
+        - Ad Azure
+        - Google Authenticator
+
+        Create my authenticator service:
+            - microservice: service with just one responsibility
+            - monolito: single service with all responsibilities (authentication,
+            authorization, user, products, category)
+
+* PASSWORD AND SECURITY
+
+        - BCRYPT
+        - MD5
+        - BASE64
+        
